@@ -3,18 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Okada Systems — Infraestrutura e segurança em cloud</title>
-  <meta name="description" content="Consultoria em AWS, Terraform, GitHub Actions e Cloudflare: arquitetura, migração, automação e segurança de infraestrutura em nuvem.">
+  <title>Okada Systems — Engenharia de software e infraestrutura em cloud</title>
+  <meta name="description" content="Consultoria em desenvolvimento de aplicações C# e .NET, sistemas para o mercado financeiro e infraestrutura AWS com Terraform, GitHub Actions e Cloudflare.">
   <link rel="canonical" href="https://okadasystems.com.br/">
+  <link rel="alternate" hreflang="pt-BR" href="https://okadasystems.com.br/">
+  <link rel="alternate" hreflang="en" href="https://okadasystems.com.br/en/">
+  <link rel="alternate" hreflang="x-default" href="https://okadasystems.com.br/">
   <meta name="theme-color" content="#1e2f55">
   <meta name="color-scheme" content="light">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
   <meta property="og:site_name" content="Okada Systems">
-  <meta property="og:title" content="Okada Systems — Infraestrutura e segurança em cloud">
-  <meta property="og:description" content="Arquitetura, migração, automação e segurança de infraestrutura em AWS e Cloudflare.">
+  <meta property="og:title" content="Okada Systems — Engenharia de software e infraestrutura em cloud">
+  <meta property="og:description" content="Aplicações em C# e .NET, sistemas financeiros e infraestrutura AWS como código.">
   <meta property="og:url" content="https://okadasystems.com.br/">
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -40,6 +44,7 @@
           <li><a href="#trabalhos">Trabalhos</a></li>
           <li><a href="#trajetoria">Trajetória</a></li>
           <li><a class="nav__cta" href="#contato">Contato</a></li>
+          <li><a class="nav__lang" href="/en/" hreflang="en" lang="en">English</a></li>
         </ul>
       </nav>
     </div>
@@ -49,8 +54,8 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero__grid">
         <div class="hero__text">
-          <h1 id="hero-title">Nuvem bem desenhada, entregue por código e protegida desde o primeiro commit.</h1>
-          <p class="hero__lede">A Okada Systems é uma consultoria de infraestrutura e segurança em cloud. Desenho, migro e endureço ambientes AWS e Cloudflare com Terraform e GitHub Actions, com a experiência de quem lidera infraestrutura em produção e começou no mercado financeiro.</p>
+          <h1 id="hero-title">Do código de baixa latência à nuvem como código, com segurança desde o primeiro commit.</h1>
+          <p class="hero__lede">A Okada Systems é uma consultoria de engenharia de software e infraestrutura em cloud. Desenvolvo aplicações em C# e .NET, com bagagem em sistemas de câmbio e derivativos, e desenho, migro e endureço ambientes AWS com Terraform e GitHub Actions.</p>
           <div class="hero__actions">
             <a class="btn btn--solid" href="mailto:contato@okadasystems.com.br?subject=Projeto%20de%20infraestrutura">Falar sobre seu projeto</a>
             <a class="btn btn--line" href="#servicos">Ver serviços</a>
@@ -82,7 +87,7 @@
             <!-- fargate -->
             <rect class="bp-node draw d3" x="210" y="200" width="190" height="56" rx="6" pathLength="1"/>
             <text class="bp-title" x="305" y="224" text-anchor="middle">ECS Fargate</text>
-            <text class="bp-label" x="305" y="243" text-anchor="middle">APIs e workers</text>
+            <text class="bp-label" x="305" y="243" text-anchor="middle">APIs .NET e workers</text>
 
             <!-- rds / s3 -->
             <rect class="bp-node draw d4" x="180" y="320" width="120" height="56" rx="6" pathLength="1"/>
@@ -122,37 +127,55 @@
       <div class="wrap split">
         <div class="split__head">
           <h2 id="servicos-title">O que eu faço</h2>
-          <p>Projetos fechados ou acompanhamento contínuo, sempre com o que foi feito versionado e documentado no seu repositório.</p>
+          <p>Software e a infraestrutura onde ele roda, em projetos fechados ou acompanhamento contínuo, sempre versionados e documentados no seu repositório.</p>
         </div>
-        <ul class="services">
-          <li>
-            <h3>Arquitetura e migração para AWS</h3>
-            <p>Ambientes em ECS Fargate, RDS, S3, Lambda e Step Functions, e migrações entre nuvens ou regiões sem parar o negócio. Já conduzi a saída completa de uma plataforma da GCP para a AWS.</p>
-          </li>
-          <li>
-            <h3>Infraestrutura como código</h3>
-            <p>Terraform em módulos, estado remoto protegido e ambientes reproduzíveis. Nada criado à mão no console, tudo revisável em pull request.</p>
-          </li>
-          <li>
-            <h3>CI/CD e cadeia de suprimentos</h3>
-            <p>Pipelines no GitHub Actions com OIDC no lugar de chaves fixas, actions fixadas por SHA, permissões mínimas e defesa contra pacotes npm comprometidos.</p>
-          </li>
-          <li>
-            <h3>Borda e proteção com Cloudflare</h3>
-            <p>WAF, regras contra abuso e domínios falsos, CDN, R2 e Workers para tirar carga e risco da sua origem.</p>
-          </li>
-          <li>
-            <h3>Governança de custos</h3>
-            <p>Tags obrigatórias, caça a recursos órfãos e gasto visível por produto, para a fatura da nuvem deixar de ser surpresa.</p>
-          </li>
-          <li>
-            <h3>Segurança e LGPD na infraestrutura</h3>
-            <p>Revisão de postura com olhar ofensivo: IAM, exposição de dados, logs e trilha de auditoria alinhados à LGPD.</p>
-          </li>
-        </ul>
+        <div class="services-groups">
+          <div class="services-group">
+            <h3 class="services-group__title">Desenvolvimento de aplicações</h3>
+            <ul class="services">
+              <li>
+                <h4>Aplicações e APIs em C# e .NET</h4>
+                <p>Serviços em ASP.NET Core com testes automatizados, prontos para rodar em contêineres na AWS. Quando o time já vive em Python, APIs com FastAPI e automações em Lambda.</p>
+              </li>
+              <li>
+                <h4>Sistemas para o mercado financeiro</h4>
+                <p>Câmbio, derivativos e precificação em tempo real: baixa latência com ring buffer no padrão Disruptor, protocolo FIX, FpML, integração com Bloomberg e cotações via WebSocket.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="services-group">
+            <h3 class="services-group__title">Cloud e infraestrutura</h3>
+            <ul class="services">
+              <li>
+                <h4>Arquitetura e migração para AWS</h4>
+                <p>Ambientes em ECS Fargate, RDS, S3, Lambda e Step Functions, e migrações entre nuvens ou regiões sem parar o negócio. Já conduzi a saída completa de uma plataforma da GCP para a AWS.</p>
+              </li>
+              <li>
+                <h4>Infraestrutura como código</h4>
+                <p>Terraform em módulos, estado remoto protegido e ambientes reproduzíveis. Nada criado à mão no console, tudo revisável em pull request.</p>
+              </li>
+              <li>
+                <h4>CI/CD e cadeia de suprimentos</h4>
+                <p>Pipelines no GitHub Actions com OIDC no lugar de chaves fixas, actions fixadas por SHA, permissões mínimas e defesa contra pacotes npm comprometidos.</p>
+              </li>
+              <li>
+                <h4>Borda e proteção com Cloudflare</h4>
+                <p>WAF, regras contra abuso e domínios falsos, CDN, R2 e Workers para tirar carga e risco da sua origem.</p>
+              </li>
+              <li>
+                <h4>Governança de custos</h4>
+                <p>Tags obrigatórias, caça a recursos órfãos e gasto visível por produto, para a fatura da nuvem deixar de ser surpresa.</p>
+              </li>
+              <li>
+                <h4>Segurança e LGPD na infraestrutura</h4>
+                <p>Revisão de postura com olhar ofensivo: IAM, exposição de dados, logs e trilha de auditoria alinhados à LGPD.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="wrap">
-        <p class="aside">Quando a solução pede código além da infraestrutura, também construo APIs em Python com FastAPI e automações em Lambda.</p>
+        <p class="aside">A vantagem de juntar as duas coisas: quem escreve a aplicação também desenha onde ela roda. Desempenho, custo e segurança são decididos juntos, e não empurrados de um time para o outro.</p>
       </div>
     </section>
 
@@ -160,6 +183,11 @@
       <div class="wrap">
         <h2 id="trabalhos-title">Trabalhos selecionados</h2>
         <div class="work">
+          <article class="work__item">
+            <h3>Sistemas de câmbio e derivativos em um grande banco</h3>
+            <p>Desenvolvimento de aplicações de baixa latência para câmbio à vista e derivativos, com ring buffer no padrão Disruptor, protocolo FIX, FpML e integração com Bloomberg. Também a plataforma de histórico de operações e a precificação de taxas com spread em tempo real via WebSocket.</p>
+            <p class="work__stack">Disruptor, FIX, FpML, Bloomberg, WebSocket, microfrontends</p>
+          </article>
           <article class="work__item">
             <h3>Migração de uma plataforma educacional da GCP para a AWS</h3>
             <p>Planejamento e execução da troca de nuvem de uma edtech com clientes institucionais: contêineres, bancos de dados e armazenamento de arquivos, com a operação seguindo durante a mudança.</p>
@@ -169,11 +197,6 @@
             <h3>Cadeia de suprimentos endurecida em sete times de produto</h3>
             <p>Durante uma onda de ataques a pacotes npm, padronizei o bloqueio de scripts de instalação, a rotação de credenciais e a revisão de workflows em todos os times.</p>
             <p class="work__stack">GitHub Actions, pnpm, npm</p>
-          </article>
-          <article class="work__item">
-            <h3>Sistemas de câmbio e derivativos em um grande banco</h3>
-            <p>Aplicações de baixa latência para câmbio e derivativos, com ring buffer no padrão Disruptor, protocolo FIX, FpML e integração com Bloomberg.</p>
-            <p class="work__stack">FIX, FpML, Bloomberg, WebSocket</p>
           </article>
           <article class="work__item">
             <h3>App de finanças com criptografia por usuário</h3>
@@ -188,13 +211,13 @@
       <div class="wrap split">
         <div class="split__head">
           <h2 id="trajetoria-title">Trajetória</h2>
-          <p>Sou Ravs, fundador da Okada Systems. Comecei no suporte, passei anos escrevendo software em C# e .NET e hoje cuido de infraestrutura, segurança e DevOps em escala.</p>
+          <p>Sou Ravs, fundador da Okada Systems. Comecei no suporte, construí carreira desenvolvendo em C# e .NET, inclusive em sistemas de câmbio e derivativos, e hoje lidero infraestrutura, segurança e DevOps em escala.</p>
         </div>
         <ol class="timeline">
           <li class="timeline__item timeline__item--now">
             <h3>Okada Systems</h3>
             <p class="timeline__role">Fundador</p>
-            <p>Consultoria em infraestrutura e segurança em cloud.</p>
+            <p>Consultoria em engenharia de software e infraestrutura em cloud.</p>
           </li>
           <li class="timeline__item">
             <h3>MedCof</h3>
@@ -204,7 +227,7 @@
           <li class="timeline__item">
             <h3>Itaú</h3>
             <p class="timeline__role">Engenharia de TI, câmbio e derivativos</p>
-            <p>Plataforma de histórico de operações, microfrontends, testes de integração com BDD e precificação em tempo real via WebSocket.</p>
+            <p>Aplicações de câmbio e derivativos com Disruptor, FIX, FpML e Bloomberg; plataforma de histórico de operações, microfrontends, BDD e precificação em tempo real via WebSocket.</p>
           </li>
           <li class="timeline__item">
             <h3>Programmers e Actminds</h3>
@@ -236,14 +259,14 @@
         </div>
         <div>
           <h3>Ferramentas do dia a dia</h3>
-          <p>AWS, Terraform, GitHub Actions, Cloudflare, Docker, MongoDB Atlas, Python, Node.js, Next.js, React, C# e .NET.</p>
+          <p>C#, .NET e ASP.NET Core, SQL Server, Python, Node.js, React, AWS, Terraform, GitHub Actions, Cloudflare, Docker e MongoDB Atlas.</p>
         </div>
       </div>
     </section>
 
     <section class="contact" id="contato" aria-labelledby="contato-title">
       <div class="wrap contact__inner">
-        <h2 id="contato-title">Conte o que está travando sua infraestrutura.</h2>
+        <h2 id="contato-title">Conte o que está travando seu sistema ou sua infraestrutura.</h2>
         <p>Atendimento remoto para empresas de todo o Brasil. Uma primeira conversa basta para entender o cenário e dizer com franqueza se faz sentido trabalharmos juntos.</p>
         <p class="contact__links">
           <a class="btn btn--solid btn--light" href="mailto:contato@okadasystems.com.br?subject=Projeto%20de%20infraestrutura">contato@okadasystems.com.br</a>

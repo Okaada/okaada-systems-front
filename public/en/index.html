@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Okada Systems — Software engineering and cloud infrastructure</title>
+  <meta name="description" content="Consulting on C# and .NET application development, financial markets systems, and AWS infrastructure with Terraform, GitHub Actions and Cloudflare.">
+  <link rel="canonical" href="https://okadasystems.com.br/en/">
+  <link rel="alternate" hreflang="pt-BR" href="https://okadasystems.com.br/">
+  <link rel="alternate" hreflang="en" href="https://okadasystems.com.br/en/">
+  <link rel="alternate" hreflang="x-default" href="https://okadasystems.com.br/">
+  <meta name="theme-color" content="#1e2f55">
+  <meta name="color-scheme" content="light">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:site_name" content="Okada Systems">
+  <meta property="og:title" content="Okada Systems — Software engineering and cloud infrastructure">
+  <meta property="og:description" content="C# and .NET applications, financial systems and AWS infrastructure as code.">
+  <meta property="og:url" content="https://okadasystems.com.br/en/">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="/en/" aria-label="Okada Systems, home">
+        <svg class="brand__seal" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <rect x="1.5" y="1.5" width="37" height="37" rx="5" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M10 13h14M10 20h14M10 27h14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+          <circle cx="29.5" cy="13" r="2" fill="currentColor"/><circle cx="29.5" cy="20" r="2" fill="currentColor"/><circle cx="29.5" cy="27" r="2" fill="currentColor"/>
+        </svg>
+        <span>Okada Systems</span>
+      </a>
+      <nav aria-label="Sections">
+        <ul class="nav">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#career">Career</a></li>
+          <li><a class="nav__cta" href="#contact">Contact</a></li>
+          <li><a class="nav__lang" href="/" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <h1 id="hero-title">From <span class="nowrap">low-latency</span> code to cloud as code, secured from the first commit.</h1>
+          <p class="hero__lede">Okada Systems is a software engineering and cloud infrastructure consultancy based in Brazil. I build applications in C# and .NET, with a background in FX and derivatives systems, and I design, migrate and harden AWS environments with Terraform and GitHub Actions.</p>
+          <div class="hero__actions">
+            <a class="btn btn--solid" href="mailto:contato@okadasystems.com.br?subject=Infrastructure%20project">Discuss your project</a>
+            <a class="btn btn--line" href="#services">See services</a>
+          </div>
+          <ul class="hero__creds" aria-label="Credentials">
+            <li>HashiCorp Certified: Terraform Associate</li>
+            <li>Postgraduate degree in Offensive Cyber Security, FIAP</li>
+          </ul>
+        </div>
+
+        <figure class="blueprint">
+          <svg viewBox="0 0 480 440" role="img" aria-labelledby="bp-title bp-desc">
+            <title id="bp-title">Reference architecture</title>
+            <desc id="bp-desc">Users reach the application through Cloudflare, which protects containerized workloads on AWS backed by a database and object storage. GitHub Actions runs Terraform, which provisions the whole environment.</desc>
+
+            <rect class="bp-zone draw d2" x="150" y="150" width="310" height="270" rx="10" pathLength="1"/>
+            <text class="bp-zone-label" x="166" y="176">Private VPC on AWS</text>
+
+            <circle class="bp-node draw d1" cx="60" cy="58" r="22" pathLength="1"/>
+            <text class="bp-label" x="60" y="104" text-anchor="middle">Users</text>
+
+            <rect class="bp-node draw d1" x="190" y="30" width="230" height="56" rx="6" pathLength="1"/>
+            <text class="bp-title" x="305" y="54" text-anchor="middle">Cloudflare</text>
+            <text class="bp-label" x="305" y="73" text-anchor="middle">WAF, CDN, TLS</text>
+
+            <rect class="bp-node draw d3" x="210" y="200" width="190" height="56" rx="6" pathLength="1"/>
+            <text class="bp-title" x="305" y="224" text-anchor="middle">ECS Fargate</text>
+            <text class="bp-label" x="305" y="243" text-anchor="middle">.NET APIs and workers</text>
+
+            <rect class="bp-node draw d4" x="180" y="320" width="120" height="56" rx="6" pathLength="1"/>
+            <text class="bp-title" x="240" y="353" text-anchor="middle">RDS</text>
+            <rect class="bp-node draw d4" x="320" y="320" width="120" height="56" rx="6" pathLength="1"/>
+            <text class="bp-title" x="380" y="353" text-anchor="middle">S3</text>
+
+            <rect class="bp-node bp-node--pipe draw d2" x="16" y="200" width="112" height="56" rx="6" pathLength="1"/>
+            <text class="bp-title" x="72" y="224" text-anchor="middle">GitHub</text>
+            <text class="bp-label" x="72" y="243" text-anchor="middle">Actions</text>
+            <rect class="bp-node bp-node--pipe draw d3" x="16" y="320" width="112" height="56" rx="6" pathLength="1"/>
+            <text class="bp-title" x="72" y="353" text-anchor="middle">Terraform</text>
+
+            <path class="bp-wire draw d2" d="M82 58 H190" pathLength="1"/>
+            <path class="bp-wire draw d3" d="M305 86 V200" pathLength="1"/>
+            <path class="bp-wire draw d4" d="M270 256 V320" pathLength="1"/>
+            <path class="bp-wire draw d4" d="M340 256 V320" pathLength="1"/>
+
+            <path class="bp-wire bp-wire--iac draw d3" d="M72 256 V320" pathLength="1"/>
+            <path class="bp-wire bp-wire--iac draw d5" d="M128 348 H150" pathLength="1"/>
+
+            <g class="bp-stamp">
+              <rect x="404" y="384" width="48" height="24" rx="3"/>
+              <text x="428" y="401" text-anchor="middle">OIDC</text>
+            </g>
+          </svg>
+          <figcaption>A typical design: a protected edge, containerized workloads with no servers to manage, and everything provisioned by a pipeline with no long-lived access keys.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="wrap split">
+        <div class="split__head">
+          <h2 id="services-title">What I do</h2>
+          <p>Software and the infrastructure it runs on, as fixed-scope projects or ongoing support, always versioned and documented in your own repository.</p>
+        </div>
+        <div class="services-groups">
+          <div class="services-group">
+            <h3 class="services-group__title">Application development</h3>
+            <ul class="services">
+              <li>
+                <h4>C# and .NET applications and APIs</h4>
+                <p>ASP.NET Core services with automated tests, ready to run in containers on AWS. When your team already lives in Python, FastAPI services and Lambda automations.</p>
+              </li>
+              <li>
+                <h4>Financial markets systems</h4>
+                <p>FX, derivatives and real-time pricing: low latency with a Disruptor-pattern ring buffer, the FIX protocol, FpML, Bloomberg integrations and streaming quotes over WebSocket.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="services-group">
+            <h3 class="services-group__title">Cloud and infrastructure</h3>
+            <ul class="services">
+              <li>
+                <h4>AWS architecture and migration</h4>
+                <p>Environments on ECS Fargate, RDS, S3, Lambda and Step Functions, plus migrations between clouds or regions without stopping the business. I have led a full platform move from GCP to AWS.</p>
+              </li>
+              <li>
+                <h4>Infrastructure as code</h4>
+                <p>Modular Terraform, protected remote state and reproducible environments. Nothing clicked together in the console, everything reviewable in a pull request.</p>
+              </li>
+              <li>
+                <h4>CI/CD and supply chain security</h4>
+                <p>GitHub Actions pipelines with OIDC instead of static keys, actions pinned by SHA, least-privilege permissions and defenses against compromised npm packages.</p>
+              </li>
+              <li>
+                <h4>Edge protection with Cloudflare</h4>
+                <p>WAF, rules against abuse and lookalike domains, CDN, R2 and Workers to take load and risk off your origin.</p>
+              </li>
+              <li>
+                <h4>Cost governance</h4>
+                <p>Mandatory tagging, hunting down orphaned resources and spend visible per product, so the cloud bill stops being a surprise.</p>
+              </li>
+              <li>
+                <h4>Infrastructure security and privacy compliance</h4>
+                <p>Posture reviews with an offensive mindset: IAM, data exposure, logging and audit trails aligned with Brazil's LGPD.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <p class="aside">The advantage of doing both: the person writing the application also designs where it runs. Performance, cost and security get decided together instead of being passed between teams.</p>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <h2 id="work-title">Selected work</h2>
+        <div class="work">
+          <article class="work__item">
+            <h3>FX and derivatives systems at a major bank</h3>
+            <p>Built low-latency applications for spot FX and derivatives on a Disruptor-pattern ring buffer, the FIX protocol, FpML and Bloomberg integrations. Also worked on the trade history platform and real-time rate pricing with spreads over WebSocket.</p>
+            <p class="work__stack">Disruptor, FIX, FpML, Bloomberg, WebSocket, micro-frontends</p>
+          </article>
+          <article class="work__item">
+            <h3>Moving an education platform from GCP to AWS</h3>
+            <p>Planned and executed the cloud migration of an edtech serving institutional clients: containers, databases and file storage, with operations running throughout the move.</p>
+            <p class="work__stack">AWS, ECS Fargate, RDS, S3, Terraform</p>
+          </article>
+          <article class="work__item">
+            <h3>Hardening the supply chain across seven product teams</h3>
+            <p>During a wave of attacks on npm packages, I standardized install-script blocking, credential rotation and workflow reviews across every team.</p>
+            <p class="work__stack">GitHub Actions, pnpm, npm</p>
+          </article>
+          <article class="work__item">
+            <h3>Personal finance app with per-user encryption</h3>
+            <p>Side project on Cloudflare Workers and D1: per-user keys derived with HKDF, AES-256-GCM field encryption, Google OIDC sign-in and data handling compliant with Brazil's LGPD.</p>
+            <p class="work__stack">Cloudflare Workers, D1, Pages, React</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="career" aria-labelledby="career-title">
+      <div class="wrap split">
+        <div class="split__head">
+          <h2 id="career-title">Career</h2>
+          <p>I'm Ravs, founder of Okada Systems. I started in IT support, built my career developing in C# and .NET, including FX and derivatives systems, and today lead infrastructure, security and DevOps at scale.</p>
+        </div>
+        <ol class="timeline">
+          <li class="timeline__item timeline__item--now">
+            <h3>Okada Systems</h3>
+            <p class="timeline__role">Founder</p>
+            <p>Software engineering and cloud infrastructure consultancy.</p>
+          </li>
+          <li class="timeline__item">
+            <h3>MedCof</h3>
+            <p class="timeline__role">Head of Infrastructure, previously Senior DevOps Engineer</p>
+            <p>Led the migration from GCP to AWS and owns cloud, security and DevOps for the product teams.</p>
+          </li>
+          <li class="timeline__item">
+            <h3>Itaú</h3>
+            <p class="timeline__role">IT Engineering, FX and derivatives</p>
+            <p>FX and derivatives applications with Disruptor, FIX, FpML and Bloomberg; trade history platform, micro-frontends, BDD and real-time pricing over WebSocket.</p>
+          </li>
+          <li class="timeline__item">
+            <h3>Programmers and Actminds</h3>
+            <p class="timeline__role">Software Developer</p>
+            <p>International projects in C#, Angular, Ext JS, SQL Server, Db2 and Azure.</p>
+          </li>
+          <li class="timeline__item">
+            <h3>W.O Network</h3>
+            <p class="timeline__role">IT support and infrastructure</p>
+            <p>Networks, servers and help desk, where it all began.</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="wrap edu">
+        <div>
+          <h3>Education</h3>
+          <ul>
+            <li>Postgraduate degree in Offensive Cyber Security, FIAP</li>
+            <li>Technologist degree in Systems Analysis and Development, Fatec Taquaritinga</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Certifications</h3>
+          <ul>
+            <li>HashiCorp Certified: Terraform Associate</li>
+            <li>Microsoft Certified: Azure Fundamentals</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Everyday tools</h3>
+          <p>C#, .NET and ASP.NET Core, SQL Server, Python, Node.js, React, AWS, Terraform, GitHub Actions, Cloudflare, Docker and MongoDB Atlas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact__inner">
+        <h2 id="contact-title">Tell me what's holding your system or infrastructure back.</h2>
+        <p>Remote engagements for companies in Brazil and abroad. One conversation is usually enough to understand the situation and tell you honestly whether we're a good fit.</p>
+        <p class="contact__links">
+          <a class="btn btn--solid btn--light" href="mailto:contato@okadasystems.com.br?subject=Infrastructure%20project">contato@okadasystems.com.br</a>
+          <a class="btn btn--line btn--light" href="https://github.com/okaada" rel="noopener noreferrer">GitHub</a>
+          <!-- <a class="btn btn--line btn--light" href="https://www.linkedin.com/in/YOUR-PROFILE/" rel="noopener noreferrer">LinkedIn</a> -->
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© 2026 Okada Systems</p>
+      <p>This site uses no cookies or trackers.</p>
+    </div>
+  </footer>
+</body>
+</html>

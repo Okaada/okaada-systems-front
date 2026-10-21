@@ -8,8 +8,10 @@ HTML e CSS estáticos, sem framework, sem build e sem JavaScript. Hospedado no C
 
 ```
 public/                 ← único diretório publicado
-  index.html
+  index.html            ← português (padrão, x-default)
   404.html
+  en/index.html         ← inglês
+  en/404.html
   _headers              ← CSP e cabeçalhos de segurança (Cloudflare Pages)
   assets/site.css
   assets/fonts/         ← Archivo variável, self-hosted (OFL)
@@ -19,6 +21,10 @@ scripts/check-static.mjs  ← guarda de CI: impede script/estilo inline e arquiv
 ```
 
 Tudo fora de `public/` (README, package.json, workflows) **não** é publicado.
+
+## Idiomas
+
+PT-BR em `/` e EN em `/en/`, ligados por `hreflang` no `<head>` e no `sitemap.xml`. Ao alterar conteúdo, atualize as duas versões no mesmo PR.
 
 ## Rodar localmente
 
