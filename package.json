@@ -1,0 +1,16 @@
+{
+  "name": "okaada-systems-front",
+  "private": true,
+  "description": "Site institucional da Okada Systems (estático, Cloudflare Pages)",
+  "type": "module",
+  "scripts": {
+    "validate": "html-validate \"public/**/*.html\" && node scripts/check-static.mjs",
+    "preview": "python3 -m http.server 8080 --directory public"
+  },
+  "devDependencies": {
+    "html-validate": "11.17.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
