@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Okada Systems — Engenharia de software e infraestrutura em cloud</title>
-  <meta name="description" content="Consultoria em desenvolvimento de aplicações C# e .NET, sistemas para o mercado financeiro e infraestrutura AWS com Terraform, GitHub Actions e Cloudflare.">
+  <title>Okada Systems — Aplicações em C# e infraestrutura AWS</title>
+  <meta name="description" content="Consultoria em desenvolvimento de aplicações C# e .NET e infraestrutura AWS com Terraform, entregues com Spec-Driven Development.">
   <link rel="canonical" href="https://okadasystems.com.br/">
   <link rel="alternate" hreflang="pt-BR" href="https://okadasystems.com.br/">
   <link rel="alternate" hreflang="en" href="https://okadasystems.com.br/en/">
   <link rel="alternate" hreflang="x-default" href="https://okadasystems.com.br/">
-  <meta name="theme-color" content="#1e2f55">
+  <meta name="theme-color" content="#151d2b">
   <meta name="color-scheme" content="light">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
@@ -17,8 +17,8 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:site_name" content="Okada Systems">
-  <meta property="og:title" content="Okada Systems — Engenharia de software e infraestrutura em cloud">
-  <meta property="og:description" content="Aplicações em C# e .NET, sistemas financeiros e infraestrutura AWS como código.">
+  <meta property="og:title" content="Okada Systems — Aplicações em C# e infraestrutura AWS">
+  <meta property="og:description" content="Da especificação à produção na AWS, com C#, Terraform e Spec-Driven Development.">
   <meta property="og:url" content="https://okadasystems.com.br/">
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -31,18 +31,18 @@
   <header class="topbar">
     <div class="wrap topbar__inner">
       <a class="brand" href="/" aria-label="Okada Systems, página inicial">
-        <svg class="brand__seal" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-          <rect x="1.5" y="1.5" width="37" height="37" rx="5" fill="none" stroke="currentColor" stroke-width="3"/>
+        <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <rect x="1.5" y="1.5" width="37" height="37" rx="7" fill="none" stroke="currentColor" stroke-width="3"/>
           <path d="M10 13h14M10 20h14M10 27h14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
-          <circle cx="29.5" cy="13" r="2" fill="currentColor"/><circle cx="29.5" cy="20" r="2" fill="currentColor"/><circle cx="29.5" cy="27" r="2" fill="currentColor"/>
+          <circle class="brand__dot" cx="29.5" cy="13" r="2.2"/><circle cx="29.5" cy="20" r="2" fill="currentColor"/><circle cx="29.5" cy="27" r="2" fill="currentColor"/>
         </svg>
         <span>Okada Systems</span>
       </a>
       <nav aria-label="Seções">
         <ul class="nav">
+          <li><a href="#como-entrego">Como entrego</a></li>
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#trabalhos">Trabalhos</a></li>
-          <li><a href="#trajetoria">Trajetória</a></li>
           <li><a class="nav__cta" href="#contato">Contato</a></li>
           <li><a class="nav__lang" href="/en/" hreflang="en" lang="en">English</a></li>
         </ul>
@@ -54,189 +54,237 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero__grid">
         <div class="hero__text">
-          <h1 id="hero-title">Do código de baixa latência à nuvem como código, com segurança desde o primeiro commit.</h1>
-          <p class="hero__lede">A Okada Systems é uma consultoria de engenharia de software e infraestrutura em cloud. Desenvolvo aplicações em C# e .NET, com bagagem em sistemas de câmbio e derivativos, e desenho, migro e endureço ambientes AWS com Terraform e GitHub Actions.</p>
+          <h1 id="hero-title">Da especificação à produção na AWS, com C# e infraestrutura como código.</h1>
+          <p class="hero__lede">A Okada Systems é uma consultoria de engenharia de software e cloud. Desenvolvo aplicações em C# e .NET, com bagagem em sistemas do mercado financeiro, e as coloco para rodar na AWS com Terraform. Trabalho com Spec-Driven Development para entregar rápido sem perder o controle do que foi construído.</p>
           <div class="hero__actions">
-            <a class="btn btn--solid" href="mailto:contato@okadasystems.com.br?subject=Projeto%20de%20infraestrutura">Falar sobre seu projeto</a>
-            <a class="btn btn--line" href="#servicos">Ver serviços</a>
+            <a class="btn btn--primary" href="mailto:contato@okadasystems.com.br?subject=Projeto%20de%20software%20e%20cloud">Falar sobre seu projeto</a>
+            <a class="btn btn--ghost" href="#como-entrego">Como eu entrego</a>
           </div>
           <ul class="hero__creds" aria-label="Credenciais">
-            <li>HashiCorp Terraform Associate</li>
+            <li>HashiCorp Certified: Terraform Associate</li>
             <li>Pós-graduação em Offensive Cyber Security, FIAP</li>
           </ul>
         </div>
 
-        <figure class="blueprint">
+        <div class="flow" role="group" aria-label="Exemplo do fluxo: especificação, aplicação em C# e infraestrutura em Terraform">
+          <figure class="file file--spec">
+            <figcaption class="file__bar"><span class="file__step">1</span><span class="file__name">spec.md</span><span class="file__kind">Especificação</span></figcaption>
+            <pre tabindex="0"><code><span class="tk-h">## Cotação em tempo real</span>
+- GET /quotes/{par}: bid, ask, spread
+- p99 abaixo de 50 ms
+- Apenas clientes autenticados</code></pre>
+          </figure>
+          <figure class="file file--app">
+            <figcaption class="file__bar"><span class="file__step">2</span><span class="file__name">QuotesEndpoint.cs</span><span class="file__kind">Aplicação</span></figcaption>
+            <pre tabindex="0"><code>app.<span class="tk-f">MapGet</span>(<span class="tk-s">"/quotes/{pair}"</span>,
+    <span class="tk-k">async</span> (<span class="tk-k">string</span> pair, <span class="tk-t">IQuoteService</span> svc) =&gt;
+        <span class="tk-k">await</span> svc.<span class="tk-f">GetAsync</span>(pair) <span class="tk-k">is</span> { } q
+            ? <span class="tk-t">Results</span>.<span class="tk-f">Ok</span>(q)
+            : <span class="tk-t">Results</span>.<span class="tk-f">NotFound</span>())
+   .<span class="tk-f">RequireAuthorization</span>();</code></pre>
+          </figure>
+          <figure class="file file--infra">
+            <figcaption class="file__bar"><span class="file__step">3</span><span class="file__name">quotes.tf</span><span class="file__kind">Infraestrutura</span></figcaption>
+            <pre tabindex="0"><code><span class="tk-k">resource</span> <span class="tk-s">"aws_ecs_service"</span> <span class="tk-s">"quotes"</span> {
+  name          = <span class="tk-s">"quotes-api"</span>
+  cluster       = aws_ecs_cluster.main.id
+  launch_type   = <span class="tk-s">"FARGATE"</span>
+  desired_count = <span class="tk-n">2</span>
+  <span class="tk-c"># task definition e rede omitidas</span>
+}</code></pre>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-entrego" aria-labelledby="sdd-title">
+      <div class="wrap">
+        <div class="section__intro">
+          <h2 id="sdd-title">Especificação primeiro, código rápido depois.</h2>
+          <p>Trabalho com Spec-Driven Development. Antes de qualquer linha de código, escrevemos juntos o que o sistema precisa fazer. Com a especificação aprovada, a implementação avança assistida por agentes de IA, e cada critério de aceite vira teste automatizado.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="steps__n">1</span>
+            <h3>Especificar</h3>
+            <p>Requisitos, contratos de API e critérios de aceite escritos e aprovados com você.</p>
+          </li>
+          <li>
+            <span class="steps__n">2</span>
+            <h3>Planejar</h3>
+            <p>A especificação vira desenho técnico e tarefas pequenas, cada uma ligada a um requisito.</p>
+          </li>
+          <li>
+            <span class="steps__n">3</span>
+            <h3>Implementar</h3>
+            <p>Código em C#, Python ou Terraform gerado a partir da especificação, com revisão minha em cada passo.</p>
+          </li>
+          <li>
+            <span class="steps__n">4</span>
+            <h3>Validar e entregar</h3>
+            <p>Os critérios de aceite rodam como testes no pipeline, que só publica na AWS o que passa.</p>
+          </li>
+        </ol>
+        <p class="aside">Por que é mais rápido: a ambiguidade é resolvida no papel, onde mudar custa minutos, e não depois do deploy, onde custa semanas. E você recebe a especificação junto com o código, então o próximo time não começa do zero.</p>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="servicos" aria-labelledby="servicos-title">
+      <div class="wrap">
+        <div class="section__intro">
+          <h2 id="servicos-title">O que eu faço</h2>
+          <p>Software e a infraestrutura onde ele roda, em projetos fechados ou acompanhamento contínuo, sempre versionados no seu repositório.</p>
+        </div>
+        <div class="pillars">
+          <div class="pillar pillar--app">
+            <h3 class="pillar__title">Desenvolvimento de aplicações</h3>
+            <ul class="pillar__list">
+              <li>
+                <h4>Aplicações e APIs em C# e .NET</h4>
+                <p>Serviços em ASP.NET Core com testes automatizados, prontos para rodar em contêineres na AWS.</p>
+              </li>
+              <li>
+                <h4>Sistemas para o mercado financeiro</h4>
+                <p>Câmbio, derivativos e precificação em tempo real: ring buffer no padrão Disruptor, protocolo FIX, FpML, integração com Bloomberg e cotações via WebSocket.</p>
+              </li>
+              <li>
+                <h4>APIs e automações em Python</h4>
+                <p>FastAPI e funções Lambda quando o time ou o problema pedem essa stack.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="pillar pillar--cloud">
+            <h3 class="pillar__title">Cloud e infraestrutura AWS</h3>
+            <ul class="pillar__list">
+              <li>
+                <h4>Arquitetura e migração</h4>
+                <p>ECS Fargate, RDS, S3, Lambda e Step Functions, e migrações entre nuvens ou regiões sem parar o negócio.</p>
+              </li>
+              <li>
+                <h4>Terraform e CI/CD</h4>
+                <p>Módulos, estado remoto protegido e pipelines no GitHub Actions com OIDC no lugar de chaves fixas.</p>
+              </li>
+              <li>
+                <h4>Segurança e cadeia de suprimentos</h4>
+                <p>IAM de privilégio mínimo, WAF na Cloudflare, actions fixadas por SHA e defesa contra pacotes comprometidos.</p>
+              </li>
+              <li>
+                <h4>Governança de custos e LGPD</h4>
+                <p>Tags obrigatórias, recursos órfãos sob controle e trilha de auditoria alinhada à LGPD.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="arch" aria-labelledby="arch-title">
+      <div class="wrap arch__grid">
+        <div class="arch__text">
+          <h2 id="arch-title">Onde suas aplicações rodam</h2>
+          <p>Um desenho típico: borda protegida pela Cloudflare, APIs .NET em contêineres sem servidor para administrar e todo o ambiente provisionado por pipeline, sem chave de acesso fixa.</p>
+          <p>Nada criado à mão no console. Tudo revisável em pull request.</p>
+        </div>
+        <figure class="arch__figure">
           <svg viewBox="0 0 480 440" role="img" aria-labelledby="bp-title bp-desc">
-            <title id="bp-title">Arquitetura de referência</title>
-            <desc id="bp-desc">Usuários acessam pela Cloudflare, que protege a aplicação em contêineres na AWS com banco de dados e armazenamento. GitHub Actions executa o Terraform, que provisiona todo o ambiente.</desc>
+            <title id="bp-title">Arquitetura de referência na AWS</title>
+            <desc id="bp-desc">Usuários acessam pela Cloudflare, que protege APIs .NET em ECS Fargate na AWS, com RDS e S3. GitHub Actions executa o Terraform, que provisiona todo o ambiente usando OIDC.</desc>
 
-            <!-- moldura AWS / VPC -->
-            <rect class="bp-zone draw d2" x="150" y="150" width="310" height="270" rx="10" pathLength="1"/>
-            <text class="bp-zone-label" x="166" y="176">VPC privada na AWS</text>
+            <rect class="bp-cloud" x="150" y="140" width="320" height="290" rx="4"/>
+            <rect class="bp-cloud-tag" x="150" y="140" width="96" height="26"/>
+            <text class="bp-cloud-label" x="160" y="158">AWS Cloud</text>
+            <rect class="bp-vpc" x="166" y="182" width="288" height="232" rx="4"/>
+            <text class="bp-vpc-label" x="178" y="202">VPC privada</text>
 
-            <!-- usuários -->
-            <circle class="bp-node draw d1" cx="60" cy="58" r="22" pathLength="1"/>
+            <circle class="bp-node" cx="60" cy="58" r="22"/>
             <text class="bp-label" x="60" y="104" text-anchor="middle">Usuários</text>
 
-            <!-- cloudflare -->
-            <rect class="bp-node draw d1" x="190" y="30" width="230" height="56" rx="6" pathLength="1"/>
+            <rect class="bp-node" x="190" y="30" width="230" height="56" rx="6"/>
             <text class="bp-title" x="305" y="54" text-anchor="middle">Cloudflare</text>
             <text class="bp-label" x="305" y="73" text-anchor="middle">WAF, CDN, TLS</text>
 
-            <!-- fargate -->
-            <rect class="bp-node draw d3" x="210" y="200" width="190" height="56" rx="6" pathLength="1"/>
-            <text class="bp-title" x="305" y="224" text-anchor="middle">ECS Fargate</text>
-            <text class="bp-label" x="305" y="243" text-anchor="middle">APIs .NET e workers</text>
+            <rect class="bp-node bp-node--app" x="210" y="216" width="190" height="56" rx="6"/>
+            <text class="bp-title" x="305" y="240" text-anchor="middle">ECS Fargate</text>
+            <text class="bp-label" x="305" y="259" text-anchor="middle">APIs .NET</text>
 
-            <!-- rds / s3 -->
-            <rect class="bp-node draw d4" x="180" y="320" width="120" height="56" rx="6" pathLength="1"/>
-            <text class="bp-title" x="240" y="353" text-anchor="middle">RDS</text>
-            <rect class="bp-node draw d4" x="320" y="320" width="120" height="56" rx="6" pathLength="1"/>
-            <text class="bp-title" x="380" y="353" text-anchor="middle">S3</text>
+            <rect class="bp-node" x="184" y="334" width="120" height="56" rx="6"/>
+            <text class="bp-title" x="244" y="367" text-anchor="middle">RDS</text>
+            <rect class="bp-node" x="320" y="334" width="120" height="56" rx="6"/>
+            <text class="bp-title" x="380" y="367" text-anchor="middle">S3</text>
 
-            <!-- pipeline -->
-            <rect class="bp-node bp-node--pipe draw d2" x="16" y="200" width="112" height="56" rx="6" pathLength="1"/>
-            <text class="bp-title" x="72" y="224" text-anchor="middle">GitHub</text>
-            <text class="bp-label" x="72" y="243" text-anchor="middle">Actions</text>
-            <rect class="bp-node bp-node--pipe draw d3" x="16" y="320" width="112" height="56" rx="6" pathLength="1"/>
-            <text class="bp-title" x="72" y="353" text-anchor="middle">Terraform</text>
+            <rect class="bp-node bp-node--pipe" x="16" y="216" width="112" height="56" rx="6"/>
+            <text class="bp-title" x="72" y="240" text-anchor="middle">GitHub</text>
+            <text class="bp-label" x="72" y="259" text-anchor="middle">Actions</text>
+            <rect class="bp-node bp-node--pipe" x="16" y="334" width="112" height="56" rx="6"/>
+            <text class="bp-title" x="72" y="367" text-anchor="middle">Terraform</text>
 
-            <!-- conexões de tráfego -->
-            <path class="bp-wire draw d2" d="M82 58 H190" pathLength="1"/>
-            <path class="bp-wire draw d3" d="M305 86 V200" pathLength="1"/>
-            <path class="bp-wire draw d4" d="M270 256 V320" pathLength="1"/>
-            <path class="bp-wire draw d4" d="M340 256 V320" pathLength="1"/>
+            <path class="bp-wire" d="M82 58 H190"/>
+            <path class="bp-wire" d="M305 86 V216"/>
+            <path class="bp-wire" d="M270 272 V334"/>
+            <path class="bp-wire" d="M346 272 V334"/>
+            <path class="bp-wire bp-wire--iac" d="M72 272 V334"/>
+            <path class="bp-wire bp-wire--iac" d="M128 362 H150"/>
 
-            <!-- provisionamento -->
-            <path class="bp-wire bp-wire--iac draw d3" d="M72 256 V320" pathLength="1"/>
-            <path class="bp-wire bp-wire--iac draw d5" d="M128 348 H150" pathLength="1"/>
-
-            <!-- selo -->
-            <g class="bp-stamp">
-              <rect x="404" y="384" width="48" height="24" rx="3"/>
-              <text x="428" y="401" text-anchor="middle">OIDC</text>
-            </g>
+            <rect class="bp-oidc" x="96" y="290" width="44" height="22" rx="3"/>
+            <text class="bp-oidc-label" x="118" y="305" text-anchor="middle">OIDC</text>
           </svg>
-          <figcaption>Um desenho típico: borda protegida, carga em contêineres sem servidor para administrar e tudo provisionado por pipeline, sem chave de acesso fixa.</figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="section" id="servicos" aria-labelledby="servicos-title">
-      <div class="wrap split">
-        <div class="split__head">
-          <h2 id="servicos-title">O que eu faço</h2>
-          <p>Software e a infraestrutura onde ele roda, em projetos fechados ou acompanhamento contínuo, sempre versionados e documentados no seu repositório.</p>
-        </div>
-        <div class="services-groups">
-          <div class="services-group">
-            <h3 class="services-group__title">Desenvolvimento de aplicações</h3>
-            <ul class="services">
-              <li>
-                <h4>Aplicações e APIs em C# e .NET</h4>
-                <p>Serviços em ASP.NET Core com testes automatizados, prontos para rodar em contêineres na AWS. Quando o time já vive em Python, APIs com FastAPI e automações em Lambda.</p>
-              </li>
-              <li>
-                <h4>Sistemas para o mercado financeiro</h4>
-                <p>Câmbio, derivativos e precificação em tempo real: baixa latência com ring buffer no padrão Disruptor, protocolo FIX, FpML, integração com Bloomberg e cotações via WebSocket.</p>
-              </li>
-            </ul>
-          </div>
-          <div class="services-group">
-            <h3 class="services-group__title">Cloud e infraestrutura</h3>
-            <ul class="services">
-              <li>
-                <h4>Arquitetura e migração para AWS</h4>
-                <p>Ambientes em ECS Fargate, RDS, S3, Lambda e Step Functions, e migrações entre nuvens ou regiões sem parar o negócio. Já conduzi a saída completa de uma plataforma da GCP para a AWS.</p>
-              </li>
-              <li>
-                <h4>Infraestrutura como código</h4>
-                <p>Terraform em módulos, estado remoto protegido e ambientes reproduzíveis. Nada criado à mão no console, tudo revisável em pull request.</p>
-              </li>
-              <li>
-                <h4>CI/CD e cadeia de suprimentos</h4>
-                <p>Pipelines no GitHub Actions com OIDC no lugar de chaves fixas, actions fixadas por SHA, permissões mínimas e defesa contra pacotes npm comprometidos.</p>
-              </li>
-              <li>
-                <h4>Borda e proteção com Cloudflare</h4>
-                <p>WAF, regras contra abuso e domínios falsos, CDN, R2 e Workers para tirar carga e risco da sua origem.</p>
-              </li>
-              <li>
-                <h4>Governança de custos</h4>
-                <p>Tags obrigatórias, caça a recursos órfãos e gasto visível por produto, para a fatura da nuvem deixar de ser surpresa.</p>
-              </li>
-              <li>
-                <h4>Segurança e LGPD na infraestrutura</h4>
-                <p>Revisão de postura com olhar ofensivo: IAM, exposição de dados, logs e trilha de auditoria alinhados à LGPD.</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="wrap">
-        <p class="aside">A vantagem de juntar as duas coisas: quem escreve a aplicação também desenha onde ela roda. Desempenho, custo e segurança são decididos juntos, e não empurrados de um time para o outro.</p>
-      </div>
-    </section>
-
-    <section class="section section--tint" id="trabalhos" aria-labelledby="trabalhos-title">
+    <section class="section" id="trabalhos" aria-labelledby="trabalhos-title">
       <div class="wrap">
         <h2 id="trabalhos-title">Trabalhos selecionados</h2>
         <div class="work">
-          <article class="work__item">
-            <h3>Sistemas de câmbio e derivativos em um grande banco</h3>
-            <p>Desenvolvimento de aplicações de baixa latência para câmbio à vista e derivativos, com ring buffer no padrão Disruptor, protocolo FIX, FpML e integração com Bloomberg. Também a plataforma de histórico de operações e a precificação de taxas com spread em tempo real via WebSocket.</p>
-            <p class="work__stack">Disruptor, FIX, FpML, Bloomberg, WebSocket, microfrontends</p>
+          <article class="work__item work__item--app">
+            <h3>Plataforma de câmbio e derivativos</h3>
+            <p>Aplicações de baixa latência para câmbio à vista e derivativos em uma instituição financeira, com ring buffer no padrão Disruptor, protocolo FIX, FpML e integração com Bloomberg, além de precificação de taxas com spread em tempo real via WebSocket.</p>
+            <p class="work__stack">Disruptor, FIX, FpML, Bloomberg, WebSocket</p>
           </article>
-          <article class="work__item">
-            <h3>Migração de uma plataforma educacional da GCP para a AWS</h3>
-            <p>Planejamento e execução da troca de nuvem de uma edtech com clientes institucionais: contêineres, bancos de dados e armazenamento de arquivos, com a operação seguindo durante a mudança.</p>
+          <article class="work__item work__item--cloud">
+            <h3>Migração completa de plataforma da GCP para a AWS</h3>
+            <p>Planejamento e execução da troca de nuvem de uma plataforma em produção: contêineres, bancos de dados e armazenamento de arquivos, com a operação seguindo durante a mudança.</p>
             <p class="work__stack">AWS, ECS Fargate, RDS, S3, Terraform</p>
           </article>
-          <article class="work__item">
-            <h3>Cadeia de suprimentos endurecida em sete times de produto</h3>
-            <p>Durante uma onda de ataques a pacotes npm, padronizei o bloqueio de scripts de instalação, a rotação de credenciais e a revisão de workflows em todos os times.</p>
+          <article class="work__item work__item--cloud">
+            <h3>Cadeia de suprimentos endurecida em vários times</h3>
+            <p>Durante uma onda de ataques a pacotes npm, padronizei o bloqueio de scripts de instalação, a rotação de credenciais e a revisão de workflows em todos os times de produto.</p>
             <p class="work__stack">GitHub Actions, pnpm, npm</p>
           </article>
-          <article class="work__item">
+          <article class="work__item work__item--app">
             <h3>App de finanças com criptografia por usuário</h3>
-            <p>Projeto próprio em Cloudflare Workers e D1: cada usuário tem chave derivada com HKDF, campos cifrados em AES-256-GCM, login via Google OIDC e tratamento de dados conforme a LGPD.</p>
-            <p class="work__stack">Cloudflare Workers, D1, Pages, React</p>
+            <p>Projeto próprio feito com Spec-Driven Development em Cloudflare Workers e D1: chave derivada por usuário com HKDF, campos cifrados em AES-256-GCM, login via Google OIDC e dados tratados conforme a LGPD.</p>
+            <p class="work__stack">Cloudflare Workers, D1, React</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="trajetoria" aria-labelledby="trajetoria-title">
+    <section class="section section--tint" id="trajetoria" aria-labelledby="trajetoria-title">
       <div class="wrap split">
         <div class="split__head">
           <h2 id="trajetoria-title">Trajetória</h2>
-          <p>Sou Ravs, fundador da Okada Systems. Comecei no suporte, construí carreira desenvolvendo em C# e .NET, inclusive em sistemas de câmbio e derivativos, e hoje lidero infraestrutura, segurança e DevOps em escala.</p>
+          <p>Sou Ravs, fundador da Okada Systems. Comecei no suporte, construí carreira desenvolvendo em C# e .NET, inclusive para o mercado financeiro, e hoje lidero infraestrutura, segurança e DevOps.</p>
         </div>
         <ol class="timeline">
           <li class="timeline__item timeline__item--now">
-            <h3>Okada Systems</h3>
-            <p class="timeline__role">Fundador</p>
-            <p>Consultoria em engenharia de software e infraestrutura em cloud.</p>
+            <h3>Fundador da Okada Systems</h3>
+            <p>Consultoria em engenharia de software e cloud.</p>
           </li>
           <li class="timeline__item">
-            <h3>MedCof</h3>
-            <p class="timeline__role">Head de Infraestrutura, antes DevOps Sênior</p>
-            <p>Conduziu a migração da GCP para a AWS e responde por cloud, segurança e DevOps dos times de produto.</p>
+            <h3>Head de Infraestrutura, antes DevOps Sênior</h3>
+            <p>Liderança de cloud, segurança e DevOps para vários times de produto, incluindo a migração completa de GCP para AWS.</p>
           </li>
           <li class="timeline__item">
-            <h3>Itaú</h3>
-            <p class="timeline__role">Engenharia de TI, câmbio e derivativos</p>
-            <p>Aplicações de câmbio e derivativos com Disruptor, FIX, FpML e Bloomberg; plataforma de histórico de operações, microfrontends, BDD e precificação em tempo real via WebSocket.</p>
+            <h3>Engenharia de software no mercado financeiro</h3>
+            <p>Sistemas de câmbio e derivativos, plataforma de histórico de operações, microfrontends, BDD e precificação em tempo real.</p>
           </li>
           <li class="timeline__item">
-            <h3>Programmers e Actminds</h3>
-            <p class="timeline__role">Desenvolvedor de software</p>
+            <h3>Desenvolvedor de software</h3>
             <p>Projetos internacionais em C#, Angular, Ext JS, SQL Server, Db2 e Azure.</p>
           </li>
           <li class="timeline__item">
-            <h3>W.O Network</h3>
-            <p class="timeline__role">Suporte e infraestrutura</p>
+            <h3>Suporte e infraestrutura</h3>
             <p>Redes, servidores e atendimento, onde tudo começou.</p>
           </li>
         </ol>
@@ -266,12 +314,12 @@
 
     <section class="contact" id="contato" aria-labelledby="contato-title">
       <div class="wrap contact__inner">
-        <h2 id="contato-title">Conte o que está travando seu sistema ou sua infraestrutura.</h2>
+        <h2 id="contato-title">Conte o que você precisa construir ou colocar de pé.</h2>
         <p>Atendimento remoto para empresas de todo o Brasil. Uma primeira conversa basta para entender o cenário e dizer com franqueza se faz sentido trabalharmos juntos.</p>
         <p class="contact__links">
-          <a class="btn btn--solid btn--light" href="mailto:contato@okadasystems.com.br?subject=Projeto%20de%20infraestrutura">contato@okadasystems.com.br</a>
-          <a class="btn btn--line btn--light" href="https://github.com/okaada" rel="noopener noreferrer">GitHub</a>
-          <!-- <a class="btn btn--line btn--light" href="https://www.linkedin.com/in/SEU-PERFIL/" rel="noopener noreferrer">LinkedIn</a> -->
+          <a class="btn btn--primary" href="mailto:contato@okadasystems.com.br?subject=Projeto%20de%20software%20e%20cloud">contato@okadasystems.com.br</a>
+          <a class="btn btn--ghost" href="https://github.com/okaada" rel="noopener noreferrer">GitHub</a>
+          <!-- <a class="btn btn--ghost" href="https://www.linkedin.com/in/SEU-PERFIL/" rel="noopener noreferrer">LinkedIn</a> -->
         </p>
       </div>
     </section>
