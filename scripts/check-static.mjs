@@ -27,6 +27,12 @@ for (const file of files.filter((f) => extname(f) === ".html")) {
   ];
   for (const [re, msg] of rules) if (re.test(html)) errors.push(`${file}: ${msg}`);
 
+  // mailto: precisa de <!--email_off--> — senão a ofuscação da Cloudflare injeta um script
+  // que a CSP bloqueia e o link vira "[email protected]"
+  for (const m of html.matchAll(/(<!--email_off-->)?<a\b[^>]*href=["']mailto:/gi)) {
+    if (!m[1]) errors.push(`${file}: link mailto: sem <!--email_off-->`);
+  }
+
   // links externos que abrem em nova aba precisam de rel=noopener
   for (const m of html.matchAll(/<a\b[^>]*target=["']_blank["'][^>]*>/gi)) {
     if (!/rel=["'][^"']*noopener/i.test(m[0])) errors.push(`${file}: target=_blank sem rel=noopener`);
